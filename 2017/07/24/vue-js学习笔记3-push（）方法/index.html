@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue.js学习笔记3--push（）方法 | Mansany | 我是Mansany，前端小白啊</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="关键词：push（）方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue.js学习笔记3--push（）方法">
+<meta property="og:url" content="http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/index.html">
+<meta property="og:site_name" content="Mansany">
+<meta property="og:description" content="关键词：push（）方法">
+<meta property="og:updated_time" content="2017-07-24T12:48:10.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue.js学习笔记3--push（）方法">
+<meta name="twitter:description" content="关键词：push（）方法">
+    
+        <link rel="alternate" type="application/atom+xml" title="Mansany" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">王睿佳</h5>
+          <a href="mailto:751148415@qq.com" title="751148415@qq.com" class="mail">751148415@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mansany" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/5701488321/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue.js学习笔记3--push（）方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue.js学习笔记3--push（）方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-24T12:45:26.000Z" itemprop="datePublished" class="page-time">
+  2017-07-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#eg1"><span class="post-toc-number">1.</span> <span class="post-toc-text">eg1:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#eg2"><span class="post-toc-number">2.</span> <span class="post-toc-text">eg2:</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-js学习笔记3-push（）方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue.js学习笔记3--push（）方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-07-24 20:45:26" datetime="2017-07-24T12:45:26.000Z"  itemprop="datePublished">2017-07-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>关键词：push（）方法<br><a id="more"></a><br><strong>push()方法可以接收任意数量的参数，把它们逐个添加到数组的末尾，并返回修改后数组的长度。</strong></p>
+<h3 id="eg1"><a href="#eg1" class="headerlink" title="eg1:"></a>eg1:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = []; <span class="comment">//创建一个空数组</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// []</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"入栈"</span>); <span class="comment">// 入栈</span></div><div class="line">arr.push(<span class="number">1</span>); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1]</span></div><div class="line">arr.push(<span class="number">2</span>); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[1,2]</span></div><div class="line">arr.push([<span class="number">3</span>,<span class="number">4</span>]); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1,2,[3,4]]</span></div><div class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<h3 id="eg2"><a href="#eg2" class="headerlink" title="eg2:"></a>eg2:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">_calculateHeight()&#123;</div><div class="line">        <span class="keyword">let</span> foodList = <span class="keyword">this</span>.$els.foodsWrapper.getElementsByClassName(<span class="string">'food-list-hook'</span>);<span class="comment">//定义每个区间的高度</span></div><div class="line">        <span class="keyword">let</span> height = <span class="number">0</span>;</div><div class="line">        <span class="keyword">this</span>.listHeight.push(height);<span class="comment">//push（）方法，在数组中添加一个height，返回并修改后的数组长度</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;foodList.length;i++) &#123;</div><div class="line">            <span class="keyword">let</span> item = foodList[i];</div><div class="line">            height += item.clientHeight;<span class="comment">//对每个区间的高度进行连接起来</span></div><div class="line">            <span class="keyword">this</span>.listHeight.push(height);</div><div class="line">        &#125;<span class="comment">//递增的，对应的是每个区间的高度是多少</span></div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-24T12:48:10.859Z" itemprop="dateUpdated">2017-07-24 20:48:10</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/24/vue-js学习笔记3-push（）方法/" target="_blank" rel="external">http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="王睿佳">
+            王睿佳
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&source=关键词：push（）方法" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记3--push（）方法》 — Mansany&url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue.js学习笔记2--v-if，v-for，v-show</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>王睿佳 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&source=关键词：push（）方法" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记3--push（）方法》 — Mansany&url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQW7CQAwFUO5/6XaLVBJ92+OGxcuqQgHmpdKM+fbrFV8/f67315P776/7T7j/rgMXHh4e3njpVx+d33n/rvs788caPSw8PDy8Nd7VjposZb6I/OHma8bDw8P7Hl4VXD2E5qU8Hh4e3jfz8qI5WkrxqMDDw8N7ljf5uCRg7YURyVF0LGvBw8PDq9WuURfpe/5e6e/h4eHhjbvqeahaLZTPFtmXq8XDw8Nb4OUbbm9ooNrcmhTcl3fi4eHhLfB6Late2Hr/+XmzLVkzHh4e3h6vWhwnD6Ia4CbHSTOqwMPDwzvKq45SVaPVfKxqJc7Aw8PDW+NNGv+TeDdp/OePuPArAQ8PD2/MO1yhD46ECeyyv4eHh4e3xksAeSrca3edOh7w8PDwnuVVI4levJs/sqSkxsPDw9vj9aKBSY8paaolEUle3OPh4eFt8KpDVPn9eZFdvb8w7IWHh4e3wKuWrXngOxk7KJxp1dMPDw8P7xCvF6H22mbJYTA5NvDw8PD2ePngVK9onpfj+cHw4Vvw8PDwlnnJkVAtuJOF5odEdQ14eHh4/8ObjAtUX6neWY5R8PDw8BZ4veGn7cX1wtzL78XDw8Nb4+XTSpPIdR7slgew8PDw8BZ4eSCbj1hV44zq8EG1XYeHh4d3llcdF6geDJMxhWo7LarH8fDw8A7xJtv3vNhNvrHZZsPDw8Nb4/WaTPOGWS+kKFx4eHh4R3m90CHZjieJSC+G+PBePDw8vAXefI+thhT5I0uOFjw8PLyneBuHQbKhV7f45nAYHh4e3hpvEsImjyzf0CcxRDQ6gIeHh/cQL9+aq0fOZFcvNMDw8PDwHuL1rmoukhfWx0pqPDw8vEGHPQln55FEHk+U/1V4eHh4C7z8R36yWSfIvNTuBcp4eHh4a7xfQ57kKSjsbWIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
