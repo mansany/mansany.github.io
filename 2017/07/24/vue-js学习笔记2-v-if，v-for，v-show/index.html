@@ -20,16 +20,16 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="关键词：v-if，v-for，v-show 1.v-if，v-for，v-show三大指令都用于&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt;中2.v-if v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。简单来说，该值为true则显示该标签，为false则不显示；12345678910111213141516 &amp;lt;div id=&quot;ap">
+    <meta name="description" content="关键词：v-if，v-for，v-show">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue.js学习笔记2--v-if，v-for，v-show">
 <meta property="og:url" content="http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/index.html">
 <meta property="og:site_name" content="Mansany">
-<meta property="og:description" content="关键词：v-if，v-for，v-show 1.v-if，v-for，v-show三大指令都用于&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt;中2.v-if v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。简单来说，该值为true则显示该标签，为false则不显示；12345678910111213141516 &amp;lt;div id=&quot;ap">
-<meta property="og:updated_time" content="2017-07-24T12:03:47.664Z">
+<meta property="og:description" content="关键词：v-if，v-for，v-show">
+<meta property="og:updated_time" content="2017-07-24T12:05:49.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue.js学习笔记2--v-if，v-for，v-show">
-<meta name="twitter:description" content="关键词：v-if，v-for，v-show 1.v-if，v-for，v-show三大指令都用于&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt;中2.v-if v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。简单来说，该值为true则显示该标签，为false则不显示；12345678910111213141516 &amp;lt;div id=&quot;ap">
+<meta name="twitter:description" content="关键词：v-if，v-for，v-show">
     
         <link rel="alternate" type="application/atom+xml" title="Mansany" href="/atom.xml">
     
@@ -181,7 +181,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>关键词：v-if，v-for，v-show</p>
+            <p>关键词：v-if，v-for，v-show<br><a id="more"></a></p>
 <h2 id="1-v-if，v-for，v-show三大指令都用于-lt-template-gt-lt-template-gt-中"><a href="#1-v-if，v-for，v-show三大指令都用于-lt-template-gt-lt-template-gt-中" class="headerlink" title="1.v-if，v-for，v-show三大指令都用于&lt;template&gt;&lt;/template&gt;中"></a>1.v-if，v-for，v-show三大指令都用于<code>&lt;template&gt;&lt;/template&gt;</code>中</h2><h2 id="2-v-if"><a href="#2-v-if" class="headerlink" title="2.v-if"></a>2.v-if</h2><p> v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。<strong>简单来说，该值为true则显示该标签，为false则不显示；</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;div id="app"&gt;  </div><div class="line">     &lt;div v-if="abc"&gt;&#123;&#123;abc.a&#125;&#125;&lt;/div&gt;  </div><div class="line"> &lt;/div&gt;  </div><div class="line"> &lt;script&gt;  </div><div class="line">     var vm = new Vue(&#123;  </div><div class="line">         el: '#app',  </div><div class="line">         data: &#123;  </div><div class="line">             abc: &#123;  </div><div class="line">                 a: "1"  </div><div class="line">             &#125;  </div><div class="line">         &#125;  </div><div class="line">     &#125;)</div><div class="line">     &lt;pre name="code" class="javascript"&gt;  </div><div class="line"> &lt;/script&gt; </div><div class="line"> // 当abc这个对象存在时，显示这一行数据，其内容为abc.a的值；</div><div class="line">//假如abc这个对象不存在，那么则不显示；</div></pre></td></tr></table></figure></p>
 <h2 id="3-v-show-用于控制该标签的display样式"><a href="#3-v-show-用于控制该标签的display样式" class="headerlink" title="3.v-show: 用于控制该标签的display样式"></a>3.v-show: 用于控制该标签的display样式</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class="cart-count" v-show="food.count&gt;0"&gt;&#123;&#123;food.count&#125;&#125;&lt;/div&gt;</div><div class="line">//cart-count的值food.count&gt;0时，则正常显示；</div><div class="line">//cart-count的值food.count&lt;=0时，则自动添加display:none；</div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class="num" v-show="totalCount&gt;0"&gt;&#123;&#123;totalCount&#125;&#125;&lt;/div&gt;</div><div class="line">//num的值totalCount&gt;0时，则正常显示；</div><div class="line">//num的值totalCount&lt;=0时，则自动添加display:none；</div></pre></td></tr></table></figure>
@@ -207,7 +207,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-07-24T12:03:47.664Z" itemprop="dateUpdated">2017-07-24 20:03:47</time>
+    最后更新时间：<time datetime="2017-07-24T12:05:49.643Z" itemprop="dateUpdated">2017-07-24 20:05:49</time>
 </span><br>
 
 
@@ -250,7 +250,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&source=关键词：v-if，v-for，v-show" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -396,7 +396,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&source=关键词：v-if，v-for，v-show" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
