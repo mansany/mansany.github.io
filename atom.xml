@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-21T07:41:44.812Z</updated>
+  <updated>2017-07-24T07:27:33.843Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue.js学习笔记1--主组件和子组件的衔接</title>
+    <link href="http://yoursite.com/2017/07/24/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E4%B8%BB%E7%BB%84%E4%BB%B6%E5%92%8C%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E8%A1%94%E6%8E%A5/"/>
+    <id>http://yoursite.com/2017/07/24/vue-js学习笔记1-主组件和子组件的衔接/</id>
+    <published>2017-07-24T06:18:10.000Z</published>
+    <updated>2017-07-24T07:27:33.843Z</updated>
+    
+    <content type="html"><![CDATA[<p>关键词：<br>组件的定义、组件之间的衔接<br><a id="more"></a></p>
+<h2 id="1-组件的定义"><a href="#1-组件的定义" class="headerlink" title="1.组件的定义"></a>1.组件的定义</h2><p>组件（Component）是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以是原生 HTML 元素的形式，以 is 特性扩展。</p>
+<h2 id="2-组件之间的衔接"><a href="#2-组件之间的衔接" class="headerlink" title="2.组件之间的衔接"></a>2.组件之间的衔接</h2><h3 id="step1：在新建的子组件根目录下新建一个-vue文件"><a href="#step1：在新建的子组件根目录下新建一个-vue文件" class="headerlink" title="step1：在新建的子组件根目录下新建一个.vue文件"></a>step1：在新建的子组件根目录下新建一个.vue文件</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">      &lt;div class="shopcart"&gt;&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script type="text/ecmascript-6"&gt;</div><div class="line">    export default&#123;&#125;;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style lang="stylus" rel="stylesheet/stylus"&gt;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<h3 id="step2：在主组件下引入该子组件"><a href="#step2：在主组件下引入该子组件" class="headerlink" title="step2：在主组件下引入该子组件"></a>step2：在主组件下引入该子组件</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;div class="goods"&gt;&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script type="text/ecmascript-6"&gt;</div><div class="line">    import cartconcontrol from 'components/shopcart/shopcart.vue';</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style lang="stylus" rel="stylesheet/stylus"&gt;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<h3 id="step3：在主组件下注册子组件"><a href="#step3：在主组件下注册子组件" class="headerlink" title="step3：在主组件下注册子组件"></a>step3：在主组件下注册子组件</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;div class="goods"&gt;&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script type="text/ecmascript-6"&gt;</div><div class="line">    import cartconcontrol from 'components/shopcart/shopcart.vue';</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style lang="stylus" rel="stylesheet/stylus"&gt;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<h3 id="step4：在主组件的模块中以自定义元素-的形式使用"><a href="#step4：在主组件的模块中以自定义元素-的形式使用" class="headerlink" title="step4：在主组件的模块中以自定义元素  的形式使用"></a>step4：在主组件的模块中以自定义元素 <shopcart> 的形式使用</shopcart></h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;div class="goods"&gt;&lt;/div&gt;</div><div class="line">    &lt;shopcart&gt;&lt;/shopcart&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script type="text/ecmascript-6"&gt;</div><div class="line">    import cartconcontrol from 'components/shopcart/shopcart.vue';</div><div class="line">    </div><div class="line">    components:&#123;</div><div class="line">        shopcart</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style lang="stylus" rel="stylesheet/stylus"&gt;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：&lt;br&gt;组件的定义、组件之间的衔接&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>vue-1</title>
