@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue.js学习笔记2--v-if，v-for，v-show | Mansany | 我是Mansany，前端小白白</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="关键词：v-if，v-for，v-show 1.v-if，v-for，v-show三大指令都用于&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt;中2.v-if v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。简单来说，该值为true则显示该标签，为false则不显示；12345678910111213141516 &amp;lt;div id=&quot;ap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue.js学习笔记2--v-if，v-for，v-show">
+<meta property="og:url" content="http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/index.html">
+<meta property="og:site_name" content="Mansany">
+<meta property="og:description" content="关键词：v-if，v-for，v-show 1.v-if，v-for，v-show三大指令都用于&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt;中2.v-if v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。简单来说，该值为true则显示该标签，为false则不显示；12345678910111213141516 &amp;lt;div id=&quot;ap">
+<meta property="og:updated_time" content="2017-07-24T12:03:47.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue.js学习笔记2--v-if，v-for，v-show">
+<meta name="twitter:description" content="关键词：v-if，v-for，v-show 1.v-if，v-for，v-show三大指令都用于&amp;lt;template&amp;gt;&amp;lt;/template&amp;gt;中2.v-if v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。简单来说，该值为true则显示该标签，为false则不显示；12345678910111213141516 &amp;lt;div id=&quot;ap">
+    
+        <link rel="alternate" type="application/atom+xml" title="Mansany" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">mansany</h5>
+          <a href="mailto:751148415@qq.com" title="751148415@qq.com" class="mail">751148415@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mansany" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/5701488321/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue.js学习笔记2--v-if，v-for，v-show</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue.js学习笔记2--v-if，v-for，v-show</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-24T08:06:24.000Z" itemprop="datePublished" class="page-time">
+  2017-07-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-v-if，v-for，v-show三大指令都用于-lt-template-gt-lt-template-gt-中"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.v-if，v-for，v-show三大指令都用于<template></template>中</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-v-if"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.v-if</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-v-show-用于控制该标签的display样式"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.v-show: 用于控制该标签的display样式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-v-for-用于列表渲染"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.v-for: 用于列表渲染</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-v-if和v-show的比较"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.v-if和v-show的比较</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-js学习笔记2-v-if，v-for，v-show"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue.js学习笔记2--v-if，v-for，v-show</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-07-24 16:06:24" datetime="2017-07-24T08:06:24.000Z"  itemprop="datePublished">2017-07-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>关键词：v-if，v-for，v-show</p>
+<h2 id="1-v-if，v-for，v-show三大指令都用于-lt-template-gt-lt-template-gt-中"><a href="#1-v-if，v-for，v-show三大指令都用于-lt-template-gt-lt-template-gt-中" class="headerlink" title="1.v-if，v-for，v-show三大指令都用于&lt;template&gt;&lt;/template&gt;中"></a>1.v-if，v-for，v-show三大指令都用于<code>&lt;template&gt;&lt;/template&gt;</code>中</h2><h2 id="2-v-if"><a href="#2-v-if" class="headerlink" title="2.v-if"></a>2.v-if</h2><p> v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。<strong>简单来说，该值为true则显示该标签，为false则不显示；</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;div id="app"&gt;  </div><div class="line">     &lt;div v-if="abc"&gt;&#123;&#123;abc.a&#125;&#125;&lt;/div&gt;  </div><div class="line"> &lt;/div&gt;  </div><div class="line"> &lt;script&gt;  </div><div class="line">     var vm = new Vue(&#123;  </div><div class="line">         el: '#app',  </div><div class="line">         data: &#123;  </div><div class="line">             abc: &#123;  </div><div class="line">                 a: "1"  </div><div class="line">             &#125;  </div><div class="line">         &#125;  </div><div class="line">     &#125;)</div><div class="line">     &lt;pre name="code" class="javascript"&gt;  </div><div class="line"> &lt;/script&gt; </div><div class="line"> // 当abc这个对象存在时，显示这一行数据，其内容为abc.a的值；</div><div class="line">//假如abc这个对象不存在，那么则不显示；</div></pre></td></tr></table></figure></p>
+<h2 id="3-v-show-用于控制该标签的display样式"><a href="#3-v-show-用于控制该标签的display样式" class="headerlink" title="3.v-show: 用于控制该标签的display样式"></a>3.v-show: 用于控制该标签的display样式</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class="cart-count" v-show="food.count&gt;0"&gt;&#123;&#123;food.count&#125;&#125;&lt;/div&gt;</div><div class="line">//cart-count的值food.count&gt;0时，则正常显示；</div><div class="line">//cart-count的值food.count&lt;=0时，则自动添加display:none；</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class="num" v-show="totalCount&gt;0"&gt;&#123;&#123;totalCount&#125;&#125;&lt;/div&gt;</div><div class="line">//num的值totalCount&gt;0时，则正常显示；</div><div class="line">//num的值totalCount&lt;=0时，则自动添加display:none；</div></pre></td></tr></table></figure>
+<h2 id="4-v-for-用于列表渲染"><a href="#4-v-for-用于列表渲染" class="headerlink" title="4.v-for: 用于列表渲染"></a>4.v-for: 用于列表渲染</h2><p>【1】items是一个对象或者数组；<br>【2】该格式相当于for(var i in items)<br>【3】插值的i相当于items[i]<br>【4】该li会被复制多个，然后依次被items[i]渲染，直到渲染完毕；<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;div id="app"&gt;  </div><div class="line">    &lt;ul&gt;  </div><div class="line">        &lt;li v-for="i in items"&gt;&#123;&#123;i&#125;&#125;&lt;/li&gt;  </div><div class="line">    &lt;/ul&gt;  </div><div class="line">&lt;/div&gt;  </div><div class="line">&lt;script&gt;  </div><div class="line">    var vm = new Vue(&#123;  </div><div class="line">        el: '#app',  </div><div class="line">        data: &#123;  </div><div class="line">            items: &#123;  </div><div class="line">                a: "1",  </div><div class="line">                b: "2",  </div><div class="line">                c: "3"  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;)  </div><div class="line"> &lt;/script&gt; </div><div class="line">//输出结果 </div><div class="line">&lt;div id="app"&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;1&lt;/li&gt;</div><div class="line">        &lt;li&gt;2&lt;/li&gt;</div><div class="line">        &lt;li&gt;3&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="5-v-if和v-show的比较"><a href="#5-v-if和v-show的比较" class="headerlink" title="5.v-if和v-show的比较"></a>5.v-if和v-show的比较</h2><p>v-if</p>
+<ul>
+<li>渲染时间：第一次为真时</li>
+<li>切换形式：动态生成，局部编译/卸载</li>
+<li>生成消耗：较小（只生成为真的部分）</li>
+<li>切换消耗：较大（切换时需要局部编译）</li>
+</ul>
+<p>v-show</p>
+<ul>
+<li>渲染时间：刚开始就渲染</li>
+<li>切换形式：较大（生成全部）</li>
+<li>生成消耗：较大（生成全部）</li>
+<li>切换消耗：较小（因为生成时已经渲染完成）</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-24T12:03:47.664Z" itemprop="dateUpdated">2017-07-24 20:03:47</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/" target="_blank" rel="external">http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="mansany">
+            mansany
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/07/24/vue-js学习笔记1-主组件和子组件的衔接/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue.js学习笔记1--主组件和子组件的衔接</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>mansany &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&title=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记2--v-if，v-for，v-show》 — Mansany&url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3aQW7jQAwEQP//07tATlksbHeTM04OpZOhONKUDiLdnMcjPv58Hd8/fz+Tf+fZX5/97//H48aBh4eHN1r668s9+9wu7jW4XU90fTw8PLxrvOSWSQFIFnH2Lm8seHh4eD/Ka1vkvAl+zU6KEx4eHt7v5CW/9/fff11a8PDw8H4PL//xP3vRzxrlj2YteHh4eBemSL/n8/X5Hh4eHt5oqt6OxPKikkS6s9HaP1fGw8PDu8DbtMvJ4pLzs00GRcHAw8PDu8zbv9Y318njiSJ0xsPDwzvKa8fzm+LRjrKSR/amXOHh4eFd4LWD/NcLzcddSWnZ/BceHh7ePV47ep+FuW0znZeQN9/Bw8PDu8abtbz5K7stKu0jfnplPDw8vAu8NqhtG+6kvb4xhMPDw8O7x2uXkscWeeTattdFacHDw8O7wEtuPBtE7TdLtYOx4QYsPDw8vBGvDWfbxeWjtfYxrX4x4OHh4R3ibQLWPHSYFaE8Jl7t28LDw8N7eSaPGPIXcRs0zBruqJzg4eHhXeOdanb3YUQ+GBvujMDDw8M7xMtLQl4wTgUZ+WaFaOsAHh4e3prXLqIdSuWv/hxZt/54eHh4R3lJHNAGBHmbfqqcvNlihYeHh3eUNxtcncpIZxFwO7TDw8PDu8HLg9dktJ9HsZuCUYcReHh4eEd5syA1jxuS8GIf4E73F+Dh4eFNeG3b2ja++QPKzxfFAA8PD+8jvHxDQH6dvDV/rI+nvxjw8PDw1rzNqz9f3Cw+mJUNPDw8vNu8TTyxaYLbmLgNJvDw8PBu89qIYfM48qi3Zb8JI/Dw8PAu8Np4t13KbHNV+0DrnRF4eHh4H+HN4oZ260DyQKPygIeHh/ejvM2wKo+JN3fHw8PD+yRv3wS3YUG7PSsvEnh4eHi3ebNYNjnTLqhtso9t28LDw8NLeX8BW6xpzhyOzWoAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
