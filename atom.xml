@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Mansany</title>
-  <subtitle>我是Mansany，前端小白白</subtitle>
+  <subtitle>我是Mansany，前端小白啊</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>mansany</name>
+    <name>王睿佳</name>
     
   </author>
   
