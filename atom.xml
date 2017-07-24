@@ -98,34 +98,6 @@
   </entry>
   
   <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2017/07/21/test/"/>
-    <id>http://yoursite.com/2017/07/21/test/</id>
-    <published>2017-07-21T06:00:53.000Z</published>
-    <updated>2017-07-21T06:00:53.227Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>blog_name</title>
-    <link href="http://yoursite.com/2017/07/04/blog-name/"/>
-    <id>http://yoursite.com/2017/07/04/blog-name/</id>
-    <published>2017-07-04T02:39:52.000Z</published>
-    <updated>2017-07-04T02:39:52.578Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="http://yoursite.com/2017/07/04/hello-world/"/>
     <id>http://yoursite.com/2017/07/04/hello-world/</id>
