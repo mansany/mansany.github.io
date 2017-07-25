@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-25T13:19:13.909Z</updated>
+  <updated>2017-07-25T14:20:47.196Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/07/25/vue-js-5/"/>
+    <id>http://yoursite.com/2017/07/25/vue-js-5/</id>
+    <published>2017-07-25T14:16:33.612Z</published>
+    <updated>2017-07-25T14:20:47.196Z</updated>
+    
+    <content type="html"><![CDATA[<p>— vue.js学习笔记5–Flex布局<br>title: vue.js-5<br>date: 2017-07-25 22:16:33<br>tags:</p>
+<ul>
+<li>vue.js</li>
+<li>css页面布局<br>categories: </li>
+<li>vue.js学习笔记</li>
+</ul>
+<hr>
+<p>关键词：css的页面布局<br><a id="more"></a></p>
+<h2 id="1-Flex布局的简介"><a href="#1-Flex布局的简介" class="headerlink" title="1.Flex布局的简介"></a><strong>1.Flex布局的简介</strong></h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，flex布局可以简便、完整、响应式地实现各种页面布局。</p>
+<h2 id="2-Flex布局的实例"><a href="#2-Flex布局的实例" class="headerlink" title="2.Flex布局的实例"></a><strong>2.Flex布局的实例</strong></h2><p>父容器都用<strong>display:flex;</strong><br>子容器根据页面具体情况而定。</p>
+<h3 id="非等分布局"><a href="#非等分布局" class="headerlink" title="非等分布局"></a>非等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用  <strong>flex:x x x;</strong><br>第一个属性：等分<br>第二个属性：内容缩放情况<br>第三个属性：占位空间<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.food-item</div><div class="line">        display flex<span class="comment">//父元素</span></div><div class="line">        margin <span class="number">18</span>px</div><div class="line">        padding-bottom <span class="number">18</span>px</div><div class="line">        border<span class="number">-1</span>px(rgba(<span class="number">7</span>,<span class="number">17</span>,<span class="number">27</span>,<span class="number">0.1</span>))</div><div class="line">        &amp;:last-child</div><div class="line">          border-bottom <span class="number">0</span>px</div><div class="line">          border-none()</div><div class="line">        .icon</div><div class="line">          flex <span class="number">0</span> <span class="number">0</span> <span class="number">57</span>px<span class="comment">//子元素</span></div><div class="line">          margin-right <span class="number">10</span>px</div></pre></td></tr></table></figure></p>
+<h3 id="等分布局"><a href="#等分布局" class="headerlink" title="等分布局"></a>等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用 <strong>flex:1;</strong>。<br>```js<br>.food-item<br>        display flex//父元素<br>        margin 18px<br>        padding-bottom 18px<br>        border-1px(rgba(7,17,27,0.1))<br>        &amp;:last-child<br>          border-bottom 0px<br>          border-none()<br>        .content<br>          flex 1//子元素<br>          margin-top 2px<br>          position relative</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;— vue.js学习笔记5–Flex布局&lt;br&gt;title: vue.js-5&lt;br&gt;date: 2017-07-25 22:16:33&lt;br&gt;tags:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;vue.js&lt;/li&gt;
+&lt;li&gt;css页面布局&lt;br&gt;categories: &lt;/li&gt;
+&lt;li&gt;vue.js学习笔记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;关键词：css的页面布局&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>vue.js学习笔记4--vue.set()方法</title>
