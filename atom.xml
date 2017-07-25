@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-24T12:48:10.859Z</updated>
+  <updated>2017-07-25T13:19:13.909Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue.js学习笔记4--vue.set()方法</title>
+    <link href="http://yoursite.com/2017/07/25/vue-js-4/"/>
+    <id>http://yoursite.com/2017/07/25/vue-js-4/</id>
+    <published>2017-07-25T12:59:53.000Z</published>
+    <updated>2017-07-25T13:19:13.909Z</updated>
+    
+    <content type="html"><![CDATA[<p>关键词：vue.set()方法触发视图更新。<br><a id="more"></a><br>当我们给vue页面添加一个实例是，再次给数据赋值，有时候不会自动更新到视图上。<br>这时，我们要用到vue.set()方法触发视图更新。</p>
+<h3 id="修改前："><a href="#修改前：" class="headerlink" title="修改前："></a>修改前：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    methods:&#123;</div><div class="line">        addCarts(event)&#123;</div><div class="line">            <span class="keyword">if</span>(!event._constructed)&#123;</div><div class="line">                 <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">            <span class="keyword">if</span>(!<span class="keyword">this</span>.food.count)<span class="comment">//当food.count不存在时&#123;</span></div><div class="line">                <span class="keyword">this</span>.food.count=<span class="number">1</span>;<span class="comment">//点击时，food.count输入1，但是视图上不会展现</span></div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">               <span class="keyword">this</span>.food.count++;</div><div class="line">            &#125; </div><div class="line">      &#125;</div><div class="line">            &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="修改后"><a href="#修改后" class="headerlink" title="修改后"></a>修改后</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;<span class="comment">//传入vue的接口</span></div><div class="line">    </div><div class="line">    methods:&#123;</div><div class="line">         addCarts(event)&#123;</div><div class="line">                    <span class="keyword">if</span>(!event._constructed)&#123;</div><div class="line">                      <span class="keyword">return</span>;</div><div class="line">                  &#125;</div><div class="line">                      <span class="keyword">if</span>(!<span class="keyword">this</span>.food.count)&#123;</div><div class="line">                       Vue.set(<span class="keyword">this</span>.food,<span class="string">'count'</span>,<span class="number">1</span>);<span class="comment">//当点击时，视图会及时更新1</span></div><div class="line">                      &#125;<span class="keyword">else</span>&#123;</div><div class="line">                        <span class="keyword">this</span>.food.count++;</div><div class="line">                      &#125;</div><div class="line">                  &#125;,</div><div class="line">             &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：vue.set()方法触发视图更新。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+      <category term="vue的方法" scheme="http://yoursite.com/tags/vue%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue.js学习笔记3--push（）方法</title>
     <link href="http://yoursite.com/2017/07/24/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03-push%EF%BC%88%EF%BC%89%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/</id>
     <published>2017-07-24T12:45:26.000Z</published>
-    <updated>2017-07-24T12:48:10.859Z</updated>
+    <updated>2017-07-25T13:20:57.077Z</updated>
     
     <content type="html"><![CDATA[<p>关键词：push（）方法<br><a id="more"></a><br><strong>push()方法可以接收任意数量的参数，把它们逐个添加到数组的末尾，并返回修改后数组的长度。</strong></p>
 <h3 id="eg1"><a href="#eg1" class="headerlink" title="eg1:"></a>eg1:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = []; <span class="comment">//创建一个空数组</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// []</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"入栈"</span>); <span class="comment">// 入栈</span></div><div class="line">arr.push(<span class="number">1</span>); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1]</span></div><div class="line">arr.push(<span class="number">2</span>); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[1,2]</span></div><div class="line">arr.push([<span class="number">3</span>,<span class="number">4</span>]); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1,2,[3,4]]</span></div><div class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
@@ -33,6 +60,12 @@
     
     </summary>
     
+      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+      <category term="vue的方法" scheme="http://yoursite.com/tags/vue%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
@@ -41,7 +74,7 @@
     <link href="http://yoursite.com/2017/07/24/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-v-if%EF%BC%8Cv-for%EF%BC%8Cv-show/"/>
     <id>http://yoursite.com/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/</id>
     <published>2017-07-24T08:06:24.000Z</published>
-    <updated>2017-07-24T12:44:01.701Z</updated>
+    <updated>2017-07-25T13:21:14.951Z</updated>
     
     <content type="html"><![CDATA[<p>关键词：v-if，v-for，v-show<br><a id="more"></a></p>
 <h2 id="1-v-if，v-for，v-show三大指令都用于-lt-template-gt-lt-template-gt-中"><a href="#1-v-if，v-for，v-show三大指令都用于-lt-template-gt-lt-template-gt-中" class="headerlink" title="1.v-if，v-for，v-show三大指令都用于&lt;template&gt;&lt;/template&gt;中"></a><strong>1.v-if，v-for，v-show三大指令都用于<code>&lt;template&gt;&lt;/template&gt;</code>中</strong></h2><h2 id="2-v-if"><a href="#2-v-if" class="headerlink" title="2.v-if "></a><strong>2.v-if </strong></h2><p> v-if，如果为false，则什么也不编译，不渲染。 当第一次条件为真时，才开始编译。<strong>简单来说，该值为true则显示该标签，为false则不显示；</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;div id="app"&gt;  </div><div class="line">     &lt;div v-if="abc"&gt;&#123;&#123;abc.a&#125;&#125;&lt;/div&gt;  </div><div class="line"> &lt;/div&gt;  </div><div class="line"> &lt;script&gt;  </div><div class="line">     var vm = new Vue(&#123;  </div><div class="line">         el: '#app',  </div><div class="line">         data: &#123;  </div><div class="line">             abc: &#123;  </div><div class="line">                 a: "1"  </div><div class="line">             &#125;  </div><div class="line">         &#125;  </div><div class="line">     &#125;)</div><div class="line">     &lt;pre name="code" class="javascript"&gt;  </div><div class="line"> &lt;/script&gt; </div><div class="line"> // 当abc这个对象存在时，显示这一行数据，其内容为abc.a的值；</div><div class="line">//假如abc这个对象不存在，那么则不显示；</div></pre></td></tr></table></figure></p>
@@ -70,6 +103,12 @@
     
     </summary>
     
+      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+      <category term="vue的指令" scheme="http://yoursite.com/tags/vue%E7%9A%84%E6%8C%87%E4%BB%A4/"/>
     
   </entry>
   
@@ -78,7 +117,7 @@
     <link href="http://yoursite.com/2017/07/24/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E4%B8%BB%E7%BB%84%E4%BB%B6%E5%92%8C%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E8%A1%94%E6%8E%A5/"/>
     <id>http://yoursite.com/2017/07/24/vue-js学习笔记1-主组件和子组件的衔接/</id>
     <published>2017-07-24T06:18:10.000Z</published>
-    <updated>2017-07-24T12:44:21.652Z</updated>
+    <updated>2017-07-25T13:21:49.517Z</updated>
     
     <content type="html"><![CDATA[<p>关键词：<br>组件的定义、组件之间的衔接<br><a id="more"></a></p>
 <h2 id="1-组件的定义"><a href="#1-组件的定义" class="headerlink" title="1.组件的定义"></a><strong>1.组件的定义</strong></h2><p>组件（Component）是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以是原生 HTML 元素的形式，以 is 特性扩展。</p>
@@ -94,6 +133,10 @@
     
     </summary>
     
+      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
     
   </entry>
   

@@ -13,24 +13,24 @@
     
     
     
-    <title>vue.js学习笔记3--push（）方法 | Mansany | 我是Mansany，前端小白啊</title>
+    <title>vue.js学习笔记4--vue.set()方法 | Mansany | 我是Mansany，前端小白啊</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="vue.js,vue的方法">
-    <meta name="description" content="关键词：push（）方法">
+    <meta name="description" content="关键词：vue.set()方法触发视图更新。">
 <meta name="keywords" content="vue.js,vue的方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue.js学习笔记3--push（）方法">
-<meta property="og:url" content="http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/index.html">
+<meta property="og:title" content="vue.js学习笔记4--vue.set()方法">
+<meta property="og:url" content="http://yoursite.com/2017/07/25/vue-js-4/index.html">
 <meta property="og:site_name" content="Mansany">
-<meta property="og:description" content="关键词：push（）方法">
-<meta property="og:updated_time" content="2017-07-25T13:20:57.077Z">
+<meta property="og:description" content="关键词：vue.set()方法触发视图更新。">
+<meta property="og:updated_time" content="2017-07-25T13:19:13.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue.js学习笔记3--push（）方法">
-<meta name="twitter:description" content="关键词：push（）方法">
+<meta name="twitter:title" content="vue.js学习笔记4--vue.set()方法">
+<meta name="twitter:description" content="关键词：vue.set()方法触发视图更新。">
     
         <link rel="alternate" type="application/atom+xml" title="Mansany" href="/atom.xml">
     
@@ -114,7 +114,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vue.js学习笔记3--push（）方法</div>
+        <div class="flex-col header-title ellipsis">vue.js学习笔记4--vue.set()方法</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -136,11 +136,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vue.js学习笔记3--push（）方法</h1>
+        <h1 class="title">vue.js学习笔记4--vue.set()方法</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-07-24T12:45:26.000Z" itemprop="datePublished" class="page-time">
-  2017-07-24
+                <time datetime="2017-07-25T12:59:53.000Z" itemprop="datePublished" class="page-time">
+  2017-07-25
 </time>
 
 
@@ -161,17 +161,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#eg1"><span class="post-toc-number">1.</span> <span class="post-toc-text">eg1:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#eg2"><span class="post-toc-number">2.</span> <span class="post-toc-text">eg2:</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改前："><span class="post-toc-number">1.</span> <span class="post-toc-text">修改前：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改后"><span class="post-toc-number">2.</span> <span class="post-toc-text">修改后</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-vue-js学习笔记3-push（）方法"
+<article id="post-vue-js-4"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vue.js学习笔记3--push（）方法</h1>
+        <h1 class="post-card-title">vue.js学习笔记4--vue.set()方法</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-07-24 20:45:26" datetime="2017-07-24T12:45:26.000Z"  itemprop="datePublished">2017-07-24</time>
+            <time class="post-time" title="2017-07-25 20:59:53" datetime="2017-07-25T12:59:53.000Z"  itemprop="datePublished">2017-07-25</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue-js学习笔记/">vue.js学习笔记</a></li></ul>
@@ -186,9 +186,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>关键词：push（）方法<br><a id="more"></a><br><strong>push()方法可以接收任意数量的参数，把它们逐个添加到数组的末尾，并返回修改后数组的长度。</strong></p>
-<h3 id="eg1"><a href="#eg1" class="headerlink" title="eg1:"></a>eg1:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = []; <span class="comment">//创建一个空数组</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// []</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"入栈"</span>); <span class="comment">// 入栈</span></div><div class="line">arr.push(<span class="number">1</span>); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1]</span></div><div class="line">arr.push(<span class="number">2</span>); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[1,2]</span></div><div class="line">arr.push([<span class="number">3</span>,<span class="number">4</span>]); </div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1,2,[3,4]]</span></div><div class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
-<h3 id="eg2"><a href="#eg2" class="headerlink" title="eg2:"></a>eg2:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">_calculateHeight()&#123;</div><div class="line">        <span class="keyword">let</span> foodList = <span class="keyword">this</span>.$els.foodsWrapper.getElementsByClassName(<span class="string">'food-list-hook'</span>);<span class="comment">//定义每个区间的高度</span></div><div class="line">        <span class="keyword">let</span> height = <span class="number">0</span>;</div><div class="line">        <span class="keyword">this</span>.listHeight.push(height);<span class="comment">//push（）方法，在数组中添加一个height，返回并修改后的数组长度</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;foodList.length;i++) &#123;</div><div class="line">            <span class="keyword">let</span> item = foodList[i];</div><div class="line">            height += item.clientHeight;<span class="comment">//对每个区间的高度进行连接起来</span></div><div class="line">            <span class="keyword">this</span>.listHeight.push(height);</div><div class="line">        &#125;<span class="comment">//递增的，对应的是每个区间的高度是多少</span></div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+            <p>关键词：vue.set()方法触发视图更新。<br><a id="more"></a><br>当我们给vue页面添加一个实例是，再次给数据赋值，有时候不会自动更新到视图上。<br>这时，我们要用到vue.set()方法触发视图更新。</p>
+<h3 id="修改前："><a href="#修改前：" class="headerlink" title="修改前："></a>修改前：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    methods:&#123;</div><div class="line">        addCarts(event)&#123;</div><div class="line">            <span class="keyword">if</span>(!event._constructed)&#123;</div><div class="line">                 <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">            <span class="keyword">if</span>(!<span class="keyword">this</span>.food.count)<span class="comment">//当food.count不存在时&#123;</span></div><div class="line">                <span class="keyword">this</span>.food.count=<span class="number">1</span>;<span class="comment">//点击时，food.count输入1，但是视图上不会展现</span></div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">               <span class="keyword">this</span>.food.count++;</div><div class="line">            &#125; </div><div class="line">      &#125;</div><div class="line">            &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="修改后"><a href="#修改后" class="headerlink" title="修改后"></a>修改后</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;<span class="comment">//传入vue的接口</span></div><div class="line">    </div><div class="line">    methods:&#123;</div><div class="line">         addCarts(event)&#123;</div><div class="line">                    <span class="keyword">if</span>(!event._constructed)&#123;</div><div class="line">                      <span class="keyword">return</span>;</div><div class="line">                  &#125;</div><div class="line">                      <span class="keyword">if</span>(!<span class="keyword">this</span>.food.count)&#123;</div><div class="line">                       Vue.set(<span class="keyword">this</span>.food,<span class="string">'count'</span>,<span class="number">1</span>);<span class="comment">//当点击时，视图会及时更新1</span></div><div class="line">                      &#125;<span class="keyword">else</span>&#123;</div><div class="line">                        <span class="keyword">this</span>.food.count++;</div><div class="line">                      &#125;</div><div class="line">                  &#125;,</div><div class="line">             &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 
         </div>
 
@@ -196,12 +196,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-07-25T13:20:57.077Z" itemprop="dateUpdated">2017-07-25 21:20:57</time>
+    最后更新时间：<time datetime="2017-07-25T13:19:13.909Z" itemprop="dateUpdated">2017-07-25 21:19:13</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/24/vue-js学习笔记3-push（）方法/" target="_blank" rel="external">http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/25/vue-js-4/" target="_blank" rel="external">http://yoursite.com/2017/07/25/vue-js-4/</a>
         
     </div>
     <footer>
@@ -231,7 +231,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/25/vue-js-4/&title=《vue.js学习笔记4--vue.set()方法》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -241,22 +241,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&source=关键词：push（）方法" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/25/vue-js-4/&title=《vue.js学习笔记4--vue.set()方法》 — Mansany&source=关键词：vue.set()方法触发视图更新。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/25/vue-js-4/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记3--push（）方法》 — Mansany&url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记4--vue.set()方法》 — Mansany&url=http://yoursite.com/2017/07/25/vue-js-4/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/25/vue-js-4/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -276,21 +276,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/07/25/vue-js-4/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">vue.js学习笔记4--vue.set()方法</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/07/24/vue-js学习笔记2-v-if，v-for，v-show/" id="post-next" class="post-nav-link">
+      <a href="/2017/07/24/vue-js学习笔记3-push（）方法/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">vue.js学习笔记2--v-if，v-for，v-show</h4>
+        <h4 class="title">vue.js学习笔记3--push（）方法</h4>
       </a>
     </div>
   
@@ -384,7 +377,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/25/vue-js-4/&title=《vue.js学习笔记4--vue.set()方法》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -394,22 +387,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&title=《vue.js学习笔记3--push（）方法》 — Mansany&source=关键词：push（）方法" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/25/vue-js-4/&title=《vue.js学习笔记4--vue.set()方法》 — Mansany&source=关键词：vue.set()方法触发视图更新。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/25/vue-js-4/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记3--push（）方法》 — Mansany&url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记4--vue.set()方法》 — Mansany&url=http://yoursite.com/2017/07/25/vue-js-4/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/24/vue-js学习笔记3-push（）方法/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/25/vue-js-4/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -420,7 +413,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQW7CQAwFUO5/6XaLVBJ92+OGxcuqQgHmpdKM+fbrFV8/f67315P776/7T7j/rgMXHh4e3njpVx+d33n/rvs788caPSw8PDy8Nd7VjposZb6I/OHma8bDw8P7Hl4VXD2E5qU8Hh4e3jfz8qI5WkrxqMDDw8N7ljf5uCRg7YURyVF0LGvBw8PDq9WuURfpe/5e6e/h4eHhjbvqeahaLZTPFtmXq8XDw8Nb4OUbbm9ooNrcmhTcl3fi4eHhLfB6Late2Hr/+XmzLVkzHh4e3h6vWhwnD6Ia4CbHSTOqwMPDwzvKq45SVaPVfKxqJc7Aw8PDW+NNGv+TeDdp/OePuPArAQ8PD2/MO1yhD46ECeyyv4eHh4e3xksAeSrca3edOh7w8PDwnuVVI4levJs/sqSkxsPDw9vj9aKBSY8paaolEUle3OPh4eFt8KpDVPn9eZFdvb8w7IWHh4e3wKuWrXngOxk7KJxp1dMPDw8P7xCvF6H22mbJYTA5NvDw8PD2ePngVK9onpfj+cHw4Vvw8PDwlnnJkVAtuJOF5odEdQ14eHh4/8ObjAtUX6neWY5R8PDw8BZ4veGn7cX1wtzL78XDw8Nb4+XTSpPIdR7slgew8PDw8BZ4eSCbj1hV44zq8EG1XYeHh4d3llcdF6geDJMxhWo7LarH8fDw8A7xJtv3vNhNvrHZZsPDw8Nb4/WaTPOGWS+kKFx4eHh4R3m90CHZjieJSC+G+PBePDw8vAXefI+thhT5I0uOFjw8PLyneBuHQbKhV7f45nAYHh4e3hpvEsImjyzf0CcxRDQ6gIeHh/cQL9+aq0fOZFcvNMDw8PDwHuL1rmoukhfWx0pqPDw8vEGHPQln55FEHk+U/1V4eHh4C7z8R36yWSfIvNTuBcp4eHh4a7xfQ57kKSjsbWIAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABv0lEQVR42u3aQW4CMQwFUO5/aSp1VQkxfNtJmEovKwRD8jILy7HzeMTj+Tveff93vD7/7td3cy4YuLi4Y+7zclxzkzmvv8kNuLi457nXwWuygdcn89lwcXHvz71e/jrpqc6Ji4v7X7gfko/BgQoXF/ee3OTwk4SnpPCRzL/grIaLizvgToLOqs8b67u4uLhF7rM4qv9avDouLu4RblLmyFOZJK1ZUJDFxcXdzM1bofmBJz/85AEOFxf3Dtxey6R6Sau8Li4u7hFuXgTJL2z1LnjlARQXF/cO3KRB0rtUUd08Li7uGe58ulU9nEI3GBcX9wh3FWhykauQyuDi4m7mThokvSZKknN9eIm4uLibub3yR+8INCmI4OLinudWw1B1k/k2PrwIXFzcI9y8qZlfwuhtNT+e4eLi7uYmAWi+5LyJi4uLe56blzB6rZH5xnBxcc9z85EUTHtHqXLnBxcXdxt3VVKSFEx7LZZmSMXFxR1zk2BUpVQLpoUAh4uLe5A7v2iVP7MsfcHFxb0Bt9puSa5cbAxkuLi4X+VW6TkUFxf3u9xJcMnTmt4raJZFcHFxB9zeiaNaRqnicHFxv8T9AaL3LuXvKvSHAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
