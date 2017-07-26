@@ -13,24 +13,24 @@
     
     
     
-    <title>vue.js学习笔记5--页面布局 | Mansany | 我是Mansany，前端小白啊</title>
+    <title>vue.js的学习笔记7--better-scroll滚动插件的引用 | Mansany | 我是Mansany，前端小白啊</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="vue.js,CSS页面布局">
-    <meta name="description" content="关键词：css的页面布局">
-<meta name="keywords" content="vue.js,CSS页面布局">
+    <meta name="keywords" content="vue.js,插件">
+    <meta name="description" content="关键词：better-scroll滚动插件与vue的结合">
+<meta name="keywords" content="vue.js,插件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue.js学习笔记5--页面布局">
-<meta property="og:url" content="http://yoursite.com/2017/07/25/vue-js-5/index.html">
+<meta property="og:title" content="vue.js的学习笔记7--better-scroll滚动插件的引用">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/vue-js-7/index.html">
 <meta property="og:site_name" content="Mansany">
-<meta property="og:description" content="关键词：css的页面布局">
-<meta property="og:updated_time" content="2017-07-26T12:26:46.804Z">
+<meta property="og:description" content="关键词：better-scroll滚动插件与vue的结合">
+<meta property="og:updated_time" content="2017-07-26T12:26:24.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue.js学习笔记5--页面布局">
-<meta name="twitter:description" content="关键词：css的页面布局">
+<meta name="twitter:title" content="vue.js的学习笔记7--better-scroll滚动插件的引用">
+<meta name="twitter:description" content="关键词：better-scroll滚动插件与vue的结合">
     
         <link rel="alternate" type="application/atom+xml" title="Mansany" href="/atom.xml">
     
@@ -114,7 +114,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vue.js学习笔记5--页面布局</div>
+        <div class="flex-col header-title ellipsis">vue.js的学习笔记7--better-scroll滚动插件的引用</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -136,11 +136,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vue.js学习笔记5--页面布局</h1>
+        <h1 class="title">vue.js的学习笔记7--better-scroll滚动插件的引用</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-07-25T13:50:53.000Z" itemprop="datePublished" class="page-time">
-  2017-07-25
+                <time datetime="2017-07-26T12:24:08.000Z" itemprop="datePublished" class="page-time">
+  2017-07-26
 </time>
 
 
@@ -161,17 +161,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Flex布局的简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.Flex布局的简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Flex布局的实例"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.Flex布局的实例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#非等分布局"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">非等分布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#等分布局"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">等分布局</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现原理：父元素固定高度，并设置属性overflow-hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。"><span class="post-toc-number">1.</span> <span class="post-toc-text">实现原理：父元素固定高度，并设置属性overflow:hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-安装依赖"><span class="post-toc-number"></span> <span class="post-toc-text">1.安装依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-引入插件"><span class="post-toc-number"></span> <span class="post-toc-text">2.引入插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-在父元素中定义对象"><span class="post-toc-number"></span> <span class="post-toc-text">4.在父元素中定义对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-使用"><span class="post-toc-number"></span> <span class="post-toc-text">5.使用</span></a>
         </nav>
     </aside>
     
-<article id="post-vue-js-5"
+<article id="post-vue-js-7"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vue.js学习笔记5--页面布局</h1>
+        <h1 class="post-card-title">vue.js的学习笔记7--better-scroll滚动插件的引用</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-07-25 21:50:53" datetime="2017-07-25T13:50:53.000Z"  itemprop="datePublished">2017-07-25</time>
+            <time class="post-time" title="2017-07-26 20:24:08" datetime="2017-07-26T12:24:08.000Z"  itemprop="datePublished">2017-07-26</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue-js学习笔记/">vue.js学习笔记</a></li></ul>
@@ -186,11 +186,12 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>关键词：css的页面布局<br><a id="more"></a></p>
-<h2 id="1-Flex布局的简介"><a href="#1-Flex布局的简介" class="headerlink" title="1.Flex布局的简介"></a><strong>1.Flex布局的简介</strong></h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，flex布局可以简便、完整、响应式地实现各种页面布局。</p>
-<h2 id="2-Flex布局的实例"><a href="#2-Flex布局的实例" class="headerlink" title="2.Flex布局的实例"></a><strong>2.Flex布局的实例</strong></h2><p>父容器都用<strong>display:flex;</strong><br>子容器根据页面具体情况而定。</p>
-<h3 id="非等分布局"><a href="#非等分布局" class="headerlink" title="非等分布局"></a>非等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用  <strong>flex:x x x;</strong><br>第一个属性：等分<br>第二个属性：内容缩放情况<br>第三个属性：占位空间<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.food-item</div><div class="line">        display flex<span class="comment">//父元素</span></div><div class="line">        margin <span class="number">18</span>px</div><div class="line">        padding-bottom <span class="number">18</span>px</div><div class="line">        border<span class="number">-1</span>px(rgba(<span class="number">7</span>,<span class="number">17</span>,<span class="number">27</span>,<span class="number">0.1</span>))</div><div class="line">        &amp;:last-child</div><div class="line">          border-bottom <span class="number">0</span>px</div><div class="line">          border-none()</div><div class="line">        .icon</div><div class="line">          flex <span class="number">0</span> <span class="number">0</span> <span class="number">57</span>px<span class="comment">//子元素</span></div><div class="line">          margin-right <span class="number">10</span>px</div></pre></td></tr></table></figure></p>
-<h3 id="等分布局"><a href="#等分布局" class="headerlink" title="等分布局"></a>等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用 <strong>flex:1;</strong>。<br>```js<br>.food-item<br>        display flex//父元素<br>        margin 18px<br>        padding-bottom 18px<br>        border-1px(rgba(7,17,27,0.1))<br>        &amp;:last-child<br>          border-bottom 0px<br>          border-none()<br>        .content<br>          flex 1//子元素<br>          margin-top 2px<br>          position relative</p>
+            <p>关键词：better-scroll滚动插件与vue的结合<br><a id="more"></a></p>
+<h3 id="实现原理：父元素固定高度，并设置属性overflow-hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。"><a href="#实现原理：父元素固定高度，并设置属性overflow-hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。" class="headerlink" title="实现原理：父元素固定高度，并设置属性overflow:hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。"></a><strong>实现原理：父元素固定高度，并设置属性overflow:hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。</strong></h3><h2 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install--save better-scroll</div></pre></td></tr></table></figure>
+<h2 id="2-引入插件"><a href="#2-引入插件" class="headerlink" title="2.引入插件"></a>2.引入插件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> BScroll <span class="keyword">from</span> <span class="string">'better-scroll'</span>;</div></pre></td></tr></table></figure>
+<h2 id="4-在父元素中定义对象"><a href="#4-在父元素中定义对象" class="headerlink" title="4.在父元素中定义对象"></a>4.在父元素中定义对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">v-el:food</div></pre></td></tr></table></figure>
+<h2 id="5-使用"><a href="#5-使用" class="headerlink" title="5.使用"></a>5.使用</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div class="food" v-show="showFlag" transition="move" v-el:food&gt;//v-el:food定义对象</div><div class="line">    &lt;div class="food-content"&gt;//内容层自动撑开</div><div class="line">         ...</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script type="text/ecmascript-6"&gt;</div><div class="line">import BScroll from 'better-scroll';</div><div class="line">export default&#123;</div><div class="line">    methods:&#123;</div><div class="line">        show()&#123;</div><div class="line">            this.showFlag = true;</div><div class="line">            this.$nextTick(() =&gt; &#123;</div><div class="line">                if(!this.scroll)&#123;</div><div class="line">                    this.scroll = new BScroll(this.$els.food,&#123;</div><div class="line">                        click:true//this.$els.food获取对象的接口</div><div class="line">                  &#125;);</div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    this.scroll.refresh();</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">  &#125;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><strong>Vue 更新数据时是异步的,所以在数据未加载完全之前,Bscroll无法获取目标内容的高度,所以会导致无法滚动的现象。为了解决上面的问题,运用Vue的nextTick();</strong></p>
 
         </div>
 
@@ -198,12 +199,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-07-26T12:26:46.804Z" itemprop="dateUpdated">2017-07-26 20:26:46</time>
+    最后更新时间：<time datetime="2017-07-26T12:26:24.824Z" itemprop="dateUpdated">2017-07-26 20:26:24</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/25/vue-js-5/" target="_blank" rel="external">http://yoursite.com/2017/07/25/vue-js-5/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/07/26/vue-js-7/" target="_blank" rel="external">http://yoursite.com/2017/07/26/vue-js-7/</a>
         
     </div>
     <footer>
@@ -223,7 +224,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS页面布局/">CSS页面布局</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/">vue.js</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/">vue.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
 
 
             
@@ -233,7 +234,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/25/vue-js-5/&title=《vue.js学习笔记5--页面布局》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/26/vue-js-7/&title=《vue.js的学习笔记7--better-scroll滚动插件的引用》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -243,22 +244,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/25/vue-js-5/&title=《vue.js学习笔记5--页面布局》 — Mansany&source=关键词：css的页面布局" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/26/vue-js-7/&title=《vue.js的学习笔记7--better-scroll滚动插件的引用》 — Mansany&source=关键词：better-scroll滚动插件与vue的结合" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/25/vue-js-5/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/26/vue-js-7/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记5--页面布局》 — Mansany&url=http://yoursite.com/2017/07/25/vue-js-5/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js的学习笔记7--better-scroll滚动插件的引用》 — Mansany&url=http://yoursite.com/2017/07/26/vue-js-7/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/25/vue-js-5/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/26/vue-js-7/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -278,21 +279,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/07/26/vue-js-6/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">vue.js学习笔记6--页面过渡与动画效果</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/07/25/vue-js-4/" id="post-next" class="post-nav-link">
+      <a href="/2017/07/26/vue-js-6/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">vue.js学习笔记4--vue.set()方法</h4>
+        <h4 class="title">vue.js学习笔记6--页面过渡与动画效果</h4>
       </a>
     </div>
   
@@ -386,7 +380,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/25/vue-js-5/&title=《vue.js学习笔记5--页面布局》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/07/26/vue-js-7/&title=《vue.js的学习笔记7--better-scroll滚动插件的引用》 — Mansany&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -396,22 +390,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/25/vue-js-5/&title=《vue.js学习笔记5--页面布局》 — Mansany&source=关键词：css的页面布局" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/07/26/vue-js-7/&title=《vue.js的学习笔记7--better-scroll滚动插件的引用》 — Mansany&source=关键词：better-scroll滚动插件与vue的结合" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/25/vue-js-5/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/26/vue-js-7/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js学习笔记5--页面布局》 — Mansany&url=http://yoursite.com/2017/07/25/vue-js-5/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue.js的学习笔记7--better-scroll滚动插件的引用》 — Mansany&url=http://yoursite.com/2017/07/26/vue-js-7/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/25/vue-js-5/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/26/vue-js-7/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -422,7 +416,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3ay07DQAwFUP7/p4vEDkHT6/GMG8GZFUpLctKF5dfHR3weX6fz9/WVzQcXF7fNfVyen49/duXZPa+v5AZcXNx5bhK8rh+QBMGE/sKGi4t7M26Vch3+cHFx/wY3D16dggoXF/c+3KT4ScJT0vhI7r+hVsPFxW1wZxqmefC6RX8XF/cfcx/Fkxc8CaX8dFxc3BFudUzSSUqSFkkU5nBxcQ9zOyGs+unagPaXEIaLizvC7Rc/ay+ZF0XfMjJcXNwRbl7M9Eetay3UF11YXFzcrdzk3/KEpjo6rTZccHFxZ7jnCpi1UU1hGoyLi3uY21qT2rTIFb08Li7uIDdZukpapfkAZu3+uLi489w89TkxVsHFxb0nt7pykWQda2PaaJSCi4t7jFv4UjwuXXvVwqwEFxf3MLfasIgGn0vLHFEoxMXFHeTmLct8LWNxnSIJZLi4uCPc/PQHJ9UkqfBr4eLibuKuJSV5apKPbJOfAxcXd5KbBK8qpdowLQQ4XFzcQe5a86KTGG1LX3Bxcd/KzYuo5M7HAxkuLu4gN1/b6ic3uLi47+W2gktxaaP1TVxc3BHu3oZpPl7tBEpcXNxj3E+lUAYcjo8jvAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwElEQVR42u3ay44CIRAFUP//p3uS2TqD90KDmhxWRpE+vanUg8cjXtfvSn593nk9reTMpYWLi7vMvYbreU8C/e+c8X/HBlxc3PPc9riEm0Sh3ICLi/uZ3PHjk2/mXg8XF/fzucXRuLi4X85Nip9xqMrLpEO1Gi4u7gK3bZju+Lyxv4uLi1tyr3Ll6Uub9ERPx8XFPcJdaWIm+9syadxwwcXFfRc3AbVlUtuEfbTvgYuLeyt37npEe0J+betF2oSLi3uEuzIuTRKXcaga01+EOVxc3CPcuwLQvQOVKBnCxcXdzJ0LXut75lonuLi4+7ht0Jl7ZNuQ/XcPLi7uZm7eEm2vZeRJTxHycHFxD3LzpsZ6gpIPV/74jIuLe4Q7Nwpdv7zVDmAm3xgXF3eKO1fMrIxMlhqsuLi4x7nt9cr19mhddOHi4h7htg/Lr2m2L1nnZbi4uNu4V7miyUy8xufj4uK+i9se3RYweVBbD3y4uLj3cvPgdXKkGl3MwsXF3cxtA82+qFlcwsDFxf0AbttgXS+rcHFxv4U7t6dtgtyQ4uDi4i5z2+KnHYS0jVFcXNz3ctuGaR627iqoajouLu489wfn2D2s8QIe3gAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-25T13:19:13.909Z</updated>
+  <updated>2017-07-26T12:26:24.824Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue.js的学习笔记7--better-scroll滚动插件的引用</title>
+    <link href="http://yoursite.com/2017/07/26/vue-js-7/"/>
+    <id>http://yoursite.com/2017/07/26/vue-js-7/</id>
+    <published>2017-07-26T12:24:08.000Z</published>
+    <updated>2017-07-26T12:26:24.824Z</updated>
+    
+    <content type="html"><![CDATA[<p>关键词：better-scroll滚动插件与vue的结合<br><a id="more"></a></p>
+<h3 id="实现原理：父元素固定高度，并设置属性overflow-hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。"><a href="#实现原理：父元素固定高度，并设置属性overflow-hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。" class="headerlink" title="实现原理：父元素固定高度，并设置属性overflow:hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。"></a><strong>实现原理：父元素固定高度，并设置属性overflow:hidden，使得子元素高度超出容器后能被隐藏。better-scroll作用在父元素上。</strong></h3><h2 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install--save better-scroll</div></pre></td></tr></table></figure>
+<h2 id="2-引入插件"><a href="#2-引入插件" class="headerlink" title="2.引入插件"></a>2.引入插件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> BScroll <span class="keyword">from</span> <span class="string">'better-scroll'</span>;</div></pre></td></tr></table></figure>
+<h2 id="4-在父元素中定义对象"><a href="#4-在父元素中定义对象" class="headerlink" title="4.在父元素中定义对象"></a>4.在父元素中定义对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">v-el:food</div></pre></td></tr></table></figure>
+<h2 id="5-使用"><a href="#5-使用" class="headerlink" title="5.使用"></a>5.使用</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div class="food" v-show="showFlag" transition="move" v-el:food&gt;//v-el:food定义对象</div><div class="line">    &lt;div class="food-content"&gt;//内容层自动撑开</div><div class="line">         ...</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script type="text/ecmascript-6"&gt;</div><div class="line">import BScroll from 'better-scroll';</div><div class="line">export default&#123;</div><div class="line">    methods:&#123;</div><div class="line">        show()&#123;</div><div class="line">            this.showFlag = true;</div><div class="line">            this.$nextTick(() =&gt; &#123;</div><div class="line">                if(!this.scroll)&#123;</div><div class="line">                    this.scroll = new BScroll(this.$els.food,&#123;</div><div class="line">                        click:true//this.$els.food获取对象的接口</div><div class="line">                  &#125;);</div><div class="line">                &#125;</div><div class="line">                else&#123;</div><div class="line">                    this.scroll.refresh();</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">  &#125;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><strong>Vue 更新数据时是异步的,所以在数据未加载完全之前,Bscroll无法获取目标内容的高度,所以会导致无法滚动的现象。为了解决上面的问题,运用Vue的nextTick();</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：better-scroll滚动插件与vue的结合&lt;br&gt;
+    
+    </summary>
+    
+      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+      <category term="插件" scheme="http://yoursite.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue.js学习笔记6--页面过渡与动画效果</title>
+    <link href="http://yoursite.com/2017/07/26/vue-js-6/"/>
+    <id>http://yoursite.com/2017/07/26/vue-js-6/</id>
+    <published>2017-07-26T12:22:53.000Z</published>
+    <updated>2017-07-26T12:22:59.573Z</updated>
+    
+    <content type="html"><![CDATA[<p>关键词：transition页面过渡与动画<br><a id="more"></a></p>
+<h3 id="示例1：页面从右翻到左"><a href="#示例1：页面从右翻到左" class="headerlink" title="示例1：页面从右翻到左"></a>示例1：页面从右翻到左</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//html模块</span></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"food"</span> v-show=<span class="string">"showFlag"</span> transition=<span class="string">"move"</span>&gt;</div><div class="line">    ...</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">css模块</div><div class="line">.food</div><div class="line"> &amp;.move-transition <span class="comment">//准备执行动画效果</span></div><div class="line">   transition all <span class="number">0.4</span> linear</div><div class="line">   transform translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line"> &amp;.move-enter, &amp;.move-leave <span class="comment">//进入动画效果，离开动画效果</span></div><div class="line">   transform translate3d(<span class="number">100</span>%, <span class="number">0</span>, <span class="number">0</span>)<span class="comment">//从右到左，平移了相对宽度100%</span></div></pre></td></tr></table></figure>
+<h3 id="示例2：页面显现隐藏"><a href="#示例2：页面显现隐藏" class="headerlink" title="示例2：页面显现隐藏"></a>示例2：页面显现隐藏</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//html模块</span></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"detail"</span> v-show=<span class="string">"detailShow"</span> transition=<span class="string">"fade"</span>&gt;</div><div class="line">    ...</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">css模块</div><div class="line">.detail</div><div class="line">  &amp;.fade-transition<span class="comment">//准备执行动画效果</span></div><div class="line">    opacity <span class="number">1</span></div><div class="line">    background rgba(<span class="number">7</span>,<span class="number">17</span>,<span class="number">27</span>,<span class="number">0.8</span>)</div><div class="line">  &amp;.fade-enter,&amp;.fade-leave <span class="comment">//进入动画效果，离开动画效果</span></div><div class="line">    opacity <span class="number">0</span></div><div class="line">    background rgba(<span class="number">7</span>,<span class="number">17</span>,<span class="number">27</span>,<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<h3 id="示例3：页面显现折叠"><a href="#示例3：页面显现折叠" class="headerlink" title="示例3：页面显现折叠"></a>示例3：页面显现折叠</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//html模块</span></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"shopcart-list"</span> v-show=<span class="string">"listShow"</span> transition=<span class="string">"fold"</span>&gt;</div><div class="line">    ...</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">css模块</div><div class="line">.shopcart-list</div><div class="line">  &amp;.fold-transition<span class="comment">//准备执行动画效果</span></div><div class="line">    transition all <span class="number">0.5</span>s</div><div class="line">    transform translate3d(<span class="number">0</span>,<span class="number">-100</span>%,<span class="number">0</span>)</div><div class="line">  &amp;.fold-enter,&amp;.fold-leave <span class="comment">//进入动画效果，离开动画效果</span></div><div class="line">    transform translate3d(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<h3 id="示例4：2个动画效果，平移和滚动同步"><a href="#示例4：2个动画效果，平移和滚动同步" class="headerlink" title="示例4：2个动画效果，平移和滚动同步"></a>示例4：2个动画效果，平移和滚动同步</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//html模块</span></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"cart-decrease"</span> v-show=<span class="string">"food.count&gt;0"</span> @click=<span class="string">"decreaseCart"</span> transition=<span class="string">"move"</span>&gt;</div><div class="line">  &lt;span class="inner icon-remove_circle_outline"&gt;&lt;/span&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">css模块</div><div class="line">.cart-decrease</div><div class="line">    transition all <span class="number">0.4</span>s linear<span class="comment">// CSS 属性的名称、过渡效果需要多少时间、速度效果的速度曲线</span></div><div class="line">    &amp;.move-transition</div><div class="line">      opacity <span class="number">1</span></div><div class="line">      transifrom translate3d(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)<span class="comment">//外层平移从0到24px</span></div><div class="line">      .inner<span class="comment">//内层滚动从0到180度</span></div><div class="line">        transition all <span class="number">0.4</span>s linear</div><div class="line">        transform rouate(<span class="number">0</span>)</div><div class="line">    &amp;.move-enter,&amp;.move-leave</div><div class="line">      opacity <span class="number">0</span></div><div class="line">      transifrom translate3d(<span class="number">24</span>px,<span class="number">0</span>,<span class="number">0</span>)<span class="comment">//3D旋转，X轴位移24px</span></div><div class="line">      .inner</div><div class="line">        transform rouate(<span class="number">180</span>deg)<span class="comment">//内层滚动从0到180度</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：transition页面过渡与动画&lt;br&gt;
+    
+    </summary>
+    
+      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+      <category term="页面动画效果" scheme="http://yoursite.com/tags/%E9%A1%B5%E9%9D%A2%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue.js学习笔记5--页面布局</title>
+    <link href="http://yoursite.com/2017/07/25/vue-js-5/"/>
+    <id>http://yoursite.com/2017/07/25/vue-js-5/</id>
+    <published>2017-07-25T13:50:53.000Z</published>
+    <updated>2017-07-26T12:26:46.804Z</updated>
+    
+    <content type="html"><![CDATA[<p>关键词：css的页面布局<br><a id="more"></a></p>
+<h2 id="1-Flex布局的简介"><a href="#1-Flex布局的简介" class="headerlink" title="1.Flex布局的简介"></a><strong>1.Flex布局的简介</strong></h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，flex布局可以简便、完整、响应式地实现各种页面布局。</p>
+<h2 id="2-Flex布局的实例"><a href="#2-Flex布局的实例" class="headerlink" title="2.Flex布局的实例"></a><strong>2.Flex布局的实例</strong></h2><p>父容器都用<strong>display:flex;</strong><br>子容器根据页面具体情况而定。</p>
+<h3 id="非等分布局"><a href="#非等分布局" class="headerlink" title="非等分布局"></a>非等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用  <strong>flex:x x x;</strong><br>第一个属性：等分<br>第二个属性：内容缩放情况<br>第三个属性：占位空间<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.food-item</div><div class="line">        display flex<span class="comment">//父元素</span></div><div class="line">        margin <span class="number">18</span>px</div><div class="line">        padding-bottom <span class="number">18</span>px</div><div class="line">        border<span class="number">-1</span>px(rgba(<span class="number">7</span>,<span class="number">17</span>,<span class="number">27</span>,<span class="number">0.1</span>))</div><div class="line">        &amp;:last-child</div><div class="line">          border-bottom <span class="number">0</span>px</div><div class="line">          border-none()</div><div class="line">        .icon</div><div class="line">          flex <span class="number">0</span> <span class="number">0</span> <span class="number">57</span>px<span class="comment">//子元素</span></div><div class="line">          margin-right <span class="number">10</span>px</div></pre></td></tr></table></figure></p>
+<h3 id="等分布局"><a href="#等分布局" class="headerlink" title="等分布局"></a>等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用 <strong>flex:1;</strong>。<br>```js<br>.food-item<br>        display flex//父元素<br>        margin 18px<br>        padding-bottom 18px<br>        border-1px(rgba(7,17,27,0.1))<br>        &amp;:last-child<br>          border-bottom 0px<br>          border-none()<br>        .content<br>          flex 1//子元素<br>          margin-top 2px<br>          position relative</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关键词：css的页面布局&lt;br&gt;
+    
+    </summary>
+    
+      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
+    
+      <category term="CSS页面布局" scheme="http://yoursite.com/tags/CSS%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>vue.js学习笔记4--vue.set()方法</title>
@@ -39,35 +131,6 @@
       <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
     
       <category term="vue的方法" scheme="http://yoursite.com/tags/vue%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue.js学习笔记5--页面布局</title>
-    <link href="http://yoursite.com/2017/07/25/vue-js-5/"/>
-    <id>http://yoursite.com/2017/07/25/vue-js-5/</id>
-    <published>2017-07-25T12:59:53.000Z</published>
-    <updated>2017-07-25T14:31:47.862Z</updated>
-    
-    <content type="html"><![CDATA[<p>关键词：css的页面布局<br><a id="more"></a></p>
-<h2 id="1-Flex布局的简介"><a href="#1-Flex布局的简介" class="headerlink" title="1.Flex布局的简介"></a><strong>1.Flex布局的简介</strong></h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，flex布局可以简便、完整、响应式地实现各种页面布局。</p>
-<h2 id="2-Flex布局的实例"><a href="#2-Flex布局的实例" class="headerlink" title="2.Flex布局的实例"></a><strong>2.Flex布局的实例</strong></h2><p>父容器都用<strong>display:flex;</strong><br>子容器根据页面具体情况而定。</p>
-<h3 id="非等分布局"><a href="#非等分布局" class="headerlink" title="非等分布局"></a>非等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用  <strong>flex:x x x;</strong><br>第一个属性：等分<br>第二个属性：内容缩放情况<br>第三个属性：占位空间<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.food-item</div><div class="line">        display flex<span class="comment">//父元素</span></div><div class="line">        margin <span class="number">18</span>px</div><div class="line">        padding-bottom <span class="number">18</span>px</div><div class="line">        border<span class="number">-1</span>px(rgba(<span class="number">7</span>,<span class="number">17</span>,<span class="number">27</span>,<span class="number">0.1</span>))</div><div class="line">        &amp;:last-child</div><div class="line">          border-bottom <span class="number">0</span>px</div><div class="line">          border-none()</div><div class="line">        .icon</div><div class="line">          flex <span class="number">0</span> <span class="number">0</span> <span class="number">57</span>px<span class="comment">//子元素</span></div><div class="line">          margin-right <span class="number">10</span>px</div></pre></td></tr></table></figure></p>
-<h3 id="等分布局"><a href="#等分布局" class="headerlink" title="等分布局"></a>等分布局</h3><p>父容器都用 <strong>display:flex;</strong><br>子容器用 <strong>flex:1;</strong>。<br>```js<br>.food-item<br>        display flex//父元素<br>        margin 18px<br>        padding-bottom 18px<br>        border-1px(rgba(7,17,27,0.1))<br>        &amp;:last-child<br>          border-bottom 0px<br>          border-none()<br>        .content<br>          flex 1//子元素<br>          margin-top 2px<br>          position relative</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;关键词：css的页面布局&lt;br&gt;
-    
-    </summary>
-    
-      <category term="vue.js学习笔记" scheme="http://yoursite.com/categories/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="vue.js" scheme="http://yoursite.com/tags/vue-js/"/>
-    
-      <category term="CSS页面布局" scheme="http://yoursite.com/tags/CSS%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/"/>
     
   </entry>
   
